@@ -8,7 +8,7 @@ import TicketList from './components/TicketList';
 
 function App() {
 
-  const intialState = {tickets : []}
+  const intialState = {tickets : [], editingTicket: null}
 
   const[state, dispatch] = useReducer(ticketReducer, intialState);
 
@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <div className='container'>
         <h1>Bug Blaster</h1>
-        <TicketForm dispatch={dispatch}></TicketForm>
+        <TicketForm dispatch={dispatch} editingTicket= {state.editingTicket}></TicketForm>
         {
           console.log({state})
           
